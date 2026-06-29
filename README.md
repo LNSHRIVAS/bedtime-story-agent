@@ -2,7 +2,12 @@
 
 A bedtime story generator for children aged 5 to 10 that takes safety as seriously as it takes storytelling. Give it a request and it writes a gentle, age appropriate, sleep friendly story, then puts that story in front of a panel of specialized reviewers before anyone reads it to a child. Child safety is the one thing it will not compromise on: a story can be charming, well paced, and perfectly on theme and still be turned away if it is not safe.
 
-Built for the Hippocratic AI Agent Deployment Engineer take home. The model is `gpt-3.5-turbo` throughout, unchanged, as the assignment requires.
+## Quickstart
+
+    pip install -r requirements.txt
+    export OPENAI_API_KEY=sk-...
+    python main.py            # tell a story
+    python -m eval.run_eval   # run the evaluation suite
 
 ## The thinking behind it
 
