@@ -1,0 +1,10 @@
+max_revisions: 2
+quality_threshold: 3.5
+temperature:
+  storyteller: 0.8
+  judges: 0.0
+weights:
+  age_level: 1.0
+  narrative: 1.0
+  bedtime_tone: 1.0
+  spec_match: 1.0
