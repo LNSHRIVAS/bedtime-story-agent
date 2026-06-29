@@ -7,7 +7,7 @@ from storyteller import AgeBand, tell_story
 Before submitting the assignment, describe here in a few sentences what you would have built next if you spent 2 more hours on this project:
 
 - Interactive mode: let the child make one gentle choice mid-story ("should the rabbit go left toward the moon or right toward the fireflies?"), then resolve from their pick.
-- TTS + streaming narration: this is a voice product at heart; hooking in a text-to-speech layer with streaming would mirror the actual latency-sensitive voice experience.
+- TTS + streaming narration: this is a voice product at heart, hooking in a text-to-speech layer with streaming would mirror the actual latency-sensitive voice experience.
 - Multi-session memory: remember the child's name, favorite characters, and past story settings across sessions — Hippocratic has published research on exactly this kind of persistent context.
 - Judge calibration: run the LLM critics against a small hand-rated set to measure how well the scoring matches human judgment, then tune prompts accordingly.
 """
