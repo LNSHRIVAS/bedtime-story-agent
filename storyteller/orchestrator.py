@@ -38,7 +38,7 @@ def tell_story(request: str, age_band: AgeBand | None = None, quiet=False) -> tu
         if not quiet:
             print(msg)
 
-    log("  ✨ Making sure this will be a gentle story...")
+    log("  >> Making sure this will be a gentle story...")
     raw = call_model(intake_prompt(request), max_tokens=300, temperature=0)
     intake_data = _extract_json(raw)
 
@@ -57,10 +57,10 @@ def tell_story(request: str, age_band: AgeBand | None = None, quiet=False) -> tu
         feedback = trace[-1]["verdict"].revision_feedback if trace else None
         prompt = storyteller_prompt(spec, feedback)
 
-        log("  📖 Once upon a time...")
+        log("  >> Once upon a time...")
         story = call_model(prompt, temperature=STORY_TEMP)
 
-        log("  🧚 The story council is checking everything...")
+        log("  >> The story council is checking everything...")
         results = run_judges_concurrent(story, spec, quiet)
 
         verdict = aggregate(results, spec)
@@ -80,12 +80,14 @@ def tell_story(request: str, age_band: AgeBand | None = None, quiet=False) -> tu
             best_verdict = verdict
 
         if verdict.passed:
-            log(f"  🌙 The story is ready! (score: {verdict.weighted_score:.1f}/5.0)")
+            log(f"  >> The story is ready! (score: {verdict.weighted_score:.1f}/5.0)")
             break
         elif attempt < MAX_REVISIONS:
-            log(f"  🪄 A little polishing... (score: {verdict.weighted_score:.1f}/5.0)")
+            log(f"  >> A little polishing... (score: {verdict.weighted_score:.1f}/5.0)")
 
     if not trace[-1]["verdict"].passed:
-        log(f"  📚 Here's the coziest version we found (score: {best_score:.1f}/5.0)")
+        log(f"  >> Here's the coziest version we found (score: {best_score:.1f}/5.0)")
 
     return best_story or trace[-1]["story"], spec, best_verdict or trace[-1]["verdict"], trace
+
+

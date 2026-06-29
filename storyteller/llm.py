@@ -1,5 +1,16 @@
+import os
+
+from dotenv import load_dotenv
 from openai import OpenAI
 
+load_dotenv()
+
+if not os.environ.get("OPENAI_API_KEY"):
+    raise RuntimeError(
+        "OPENAI_API_KEY is not set. "
+        "Create a .env file with OPENAI_API_KEY=sk-... "
+        "or set it as an environment variable."
+    )
 
 _client = OpenAI()
 

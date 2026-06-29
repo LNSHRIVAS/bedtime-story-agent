@@ -154,7 +154,7 @@ There are two layers, by design. The intake screen declines unsafe requests befo
 The knobs that matter live in `config.yaml`, so behavior can change without touching code:
 
 ```yaml
-quality_threshold: 3.0     # mean quality score (1 to 5) a story must reach to pass
+quality_threshold: 3.5     # mean quality score (1 to 5) a story must reach to pass
 max_revisions: 2           # revision passes allowed after the first draft
 temperature:
   storyteller: 0.8         # a little warmth in the writing
