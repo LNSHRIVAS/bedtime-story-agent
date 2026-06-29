@@ -49,7 +49,7 @@ def main():
     print()
     for r in results:
         safe = "BLOCKED" if r["verdict"].safety_gate != "pass" else "OK"
-        print(f"  {r['id']:20s}  {safe:8s}  {r['first_score']:.1f}→{r['final_score']:.1f}")
+        print(f"  {r['id']:20s}  {safe:8s}  {r['first_score']:.1f} -> {r['final_score']:.1f}")
 
 
 if __name__ == "__main__":
