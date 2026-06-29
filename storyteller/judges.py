@@ -94,11 +94,11 @@ DEFAULT_JUDGES = [
 JUDGE_ORDER = ["safety", "age_level", "narrative", "bedtime_tone", "spec_match"]
 
 JUDGE_NAMES = {
-    "safety": "  \u2192 Safety",
-    "age_level": "  \u2192 Age",
-    "narrative": "  \u2192 Story",
-    "bedtime_tone": "  \u2192 Tone",
-    "spec_match": "  \u2192 Wish",
+    "safety": "  > Safety",
+    "age_level": "  > Age",
+    "narrative": "  > Story",
+    "bedtime_tone": "  > Tone",
+    "spec_match": "  > Wish",
 }
 
 
